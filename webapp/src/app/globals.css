@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .scene-frame {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .scene-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 11, 24, 0.35), rgba(7, 11, 24, 0.75));
+    mix-blend-mode: multiply;
+  }
+
+  .scene-porch {
+    background-image:
+      radial-gradient(120% 100% at 80% 0%, rgba(252, 211, 77, 0.65), transparent),
+      linear-gradient(145deg, rgba(99, 102, 241, 0.2), rgba(15, 23, 42, 0.9)),
+      linear-gradient(100deg, #2f1f17, #1b100b);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .scene-porch-night {
+    background-image:
+      radial-gradient(120% 100% at 75% 10%, rgba(148, 163, 184, 0.25), transparent),
+      linear-gradient(180deg, rgba(12, 10, 24, 0.85), rgba(2, 6, 23, 0.95)),
+      linear-gradient(100deg, #1c1424, #04060f);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .scene-beach {
+    background-image:
+      radial-gradient(110% 85% at 15% 15%, rgba(125, 211, 252, 0.75), transparent 70%),
+      radial-gradient(90% 60% at 80% 80%, rgba(250, 204, 21, 0.6), transparent 70%),
+      linear-gradient(160deg, #0ea5e9 10%, #1d4ed8 35%, #155e75 60%, #0c4a6e 100%);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .scene-mountain {
+    background-image:
+      radial-gradient(100% 55% at 40% 10%, rgba(94, 234, 212, 0.35), transparent 70%),
+      linear-gradient(180deg, rgba(2, 6, 23, 0.2), rgba(15, 23, 42, 0.8)),
+      linear-gradient(120deg, #0f172a 25%, #1e293b 55%, #312e81 100%);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .scene-city {
+    background-image:
+      radial-gradient(120% 90% at 20% 20%, rgba(190, 242, 100, 0.3), transparent 70%),
+      radial-gradient(90% 70% at 80% 80%, rgba(248, 113, 113, 0.35), transparent 70%),
+      linear-gradient(170deg, #020617 10%, #0f172a 40%, #312e81 75%, #7c3aed 100%);
+    background-size: cover;
+    background-position: center;
+  }
+}
